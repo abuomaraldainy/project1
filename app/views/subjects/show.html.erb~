@@ -1,0 +1,23 @@
+<p><%= link_to("Back To Subject's List", {:action => 'index'}) %> </p>
+<h2> Subject's Details </h2>
+<table class="index_t">
+   <tr>
+      <td ><b>Name : </b><%= @subject.name %></td>
+   </tr>
+   <tr>
+      <td ><b>Position : </b><%= @subject.position %></td>
+   </tr>
+   <tr>
+      <td><b>Visibility : </b><%=  @subject.visible ? 'true' : 'false' %></td>
+   </tr>
+   <tr>
+      <td><b>Number of Pages : </b><%=  @subject.pages.size %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Created : </b><%=  @subject.created_at %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Updated :</b><%=  @subject.updated_at %></td> 
+   </tr>
+</table>
+

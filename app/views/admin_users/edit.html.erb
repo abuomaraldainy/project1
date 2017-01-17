@@ -1,0 +1,21 @@
+<% @page_title = "Update Admin" %>
+<% @panel_header = "Update Admin User Records" %> 
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index'}, :class => "") %> 
+    </div>
+</div>
+<br>
+<div class="row">
+    <%= error_message_for(@admin_user) %>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+       <%= form_for(:admin_user, :url => {:action => "update", :id => @admin_user.id }) do |f| %>
+           <%= render(:partial => "form", :locals => {:f => f}) %>
+           <div class="col-lg-offset-4"> 
+            <%= submit_tag('Update Admin User',:class => 'btn btn-default')%> 
+         </div>
+       <% end %>    
+    </div>
+    <div class="col-lg-4"> </div>
+</div

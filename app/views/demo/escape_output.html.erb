@@ -1,0 +1,24 @@
+<% evil_string ="<script>alert('I am trying to hack your website');</script>" %>
+<% simple_string ='<strong>please </strong> visit  <a href="wwww.google.com"> us</a>'  %>
+<%= html_escape(evil_string) %>
+<br/>
+<%= evil_string %>
+<br/>
+<%= raw(simple_string) %>
+<br/>
+<%= raw(evil_string) %>
+<br/>
+<%= evil_string.html_safe? %>
+<br/>
+<%= raw(evil_string).html_safe.html_safe? %>
+<br/>
+<%= html_escape(simple_string) %>
+<br/>
+<%= strip_links(simple_string) %>
+<br/>
+<%= strip_tags(simple_string) %>
+<br/>
+<%= sanitize(simple_string, :tags => ['strong', 'a']) %>
+<br/>
+<%= sanitize(simple_string, :tags => []) %>
+<br/>

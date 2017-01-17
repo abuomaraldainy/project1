@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>photo shop</title>
+	<script type="text/javascript">
+
+	function selection(){
+        
+        document.getElementById("intro").style.color = "red";
+
+		if (document.getElementById("select").value == 'red'){
+			document.getElementById("intro").style.color = "red";
+		}
+
+		else{
+			
+            document.getElementById("intro").style.color = "green";
+		}
+
+			
+
+	}
+	</script>
+</head>
+<body>
+
+   <p id="intro"> this is my text</p>
+   <select id="select" onchange="selection()" >
+   	  <option  value="red" ">red</option>
+   	  <option  value="green" ">green</option>
+   </select>
+
+</body>
+</html>

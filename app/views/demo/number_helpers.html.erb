@@ -1,0 +1,41 @@
+<% n = 1024 ; n1 = 123456789 %>
+
+<h2> Number To Currency  </h2>
+<%= number_to_currency(n) %>
+
+<hr/>
+
+<h2> Number To Currency rail Yemeni Format  </h2>
+<%= number_to_currency(n, :unit => 'RY', :format => "%u %n", :precision => 3) %>
+
+<hr/>
+
+<h2> Number with Delimiter  </h2>
+<%= number_with_delimiter (n) %>
+
+<hr/>
+
+<h2> Number with precision  </h2>
+<%= number_with_precision(n) %>
+
+<hr/>
+
+<h2> Number to percentage   </h2>
+<%= number_to_percentage (n) %>
+
+<hr/>
+
+<h2> Number to human   </h2>
+<%= number_to_human (n) %>
+
+<hr/>
+
+<h2> Number to human   </h2>
+<%= number_to_human_size (n) %>
+
+<hr/>
+
+<h1> Number to phone  </h1>
+<%= number_to_phone (n1) %>
+
+<hr/>

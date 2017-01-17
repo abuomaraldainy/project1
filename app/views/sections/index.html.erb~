@@ -1,0 +1,28 @@
+<h2>List of all Sections </h2>
+<table class="index_t">
+   <tr>
+       <th>ID </th>
+       <th>Page ID </th>
+       <th>Section </th>
+       <th>Position</th>
+       <th>Visibility</th>
+       <th>Content Type </th>
+       <th>Content </th>
+       <th>Action</th>
+   </tr>
+   <% @sections.each do |section|%>
+   <tr>
+       <td ><%= section.id %></td>
+       <td ><%= section.page_id %></td>
+       <td ><%= section.name %></td>
+       <td ><%= section.position %></td>
+       <td >status_tag(section.visible)</td>
+       <td ><%= section.content_type %></td>
+       <td ><%= section.content %></td>
+       <td > <%= link_to('Show',{:action => 'show' , :id => section.id}) %> </td>
+       <td > <%= link_to('Edit',{:action => 'edit' , :id => section.id}) %> </td>
+       <td > <%= link_to('Delete',{:action => 'delete' , :id => section.id}) %> </td>
+   </tr>
+   <% end %>
+</table>
+<p><%= link_to("Create a new Section", {:action => 'new'}) %> </p>

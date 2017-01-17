@@ -1,0 +1,26 @@
+<p><%= link_to("Back To Page's List", {:action => 'index'}) %> </p>
+<h2> Section's Details </h2>
+<table class="index_t">
+   <tr>
+      <td ><b>Name : </b><%= @section.name %></td>
+   </tr>
+   <tr>
+      <td ><b>Position : </b><%= @section.position %></td>
+   </tr>
+   <tr>
+      <td><b>Visibility : </b><%=  @section.visible ? 'true' : 'false' %></td>
+   </tr>
+   <tr>
+      <td ><b>Content Type : </b><%= @section.content_type %></td>
+   </tr>
+   <tr>
+      <td ><b>content : </b><%= @section.content %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Created : </b><%=  @section.created_at %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Updated :</b><%=  @section.updated_at %></td> 
+   </tr>
+</table>
+

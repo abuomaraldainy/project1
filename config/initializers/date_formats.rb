@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:my_custom_datetime] = "%d/%m/%Y at %H:%M:%S"

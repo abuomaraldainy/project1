@@ -1,0 +1,21 @@
+<% @page_title = "Delete Subject" %>
+<% @panel_header = "Delete Subject" %>
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index'}, :class => "") %> 
+    </div>
+</div>
+<div class="row">
+   <div class="col-lg-4"> </div>
+   <div class="col-lg-4">
+		 <%= form_for(:section, :url => {:action => 'destroy', :id => @subject.id}) do |f| %>
+		    <div class="alert alert-danger">
+		        <p class="text-center"> Are you sure you want to delete <br/> <%=">> #{@subject.name} << " %>?</p>
+		    </div>
+		    <div class="col-sm-offset-0"> 
+		    	<%= submit_tag('Delete Subject',:class => 'btn btn-danger')%> 
+		 	</div>
+		<% end %>    
+   </div>
+   <div class="col-lg-4"> </div>
+</div>   

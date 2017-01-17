@@ -1,0 +1,64 @@
+class SubjectsController < ApplicationController
+  
+  layout "admin"
+  def index
+    @subjects = Subject.sorted
+  end
+
+  def show
+    @subject= Subject.find_by_id(params[:id])
+  end
+
+  def new
+    @subject= Subject.new()
+  end
+  
+  def create 
+    @subject = Subject.new(form_params)
+    if @subject.save 
+       flash[:notice] = "Suject created sucessfully"
+       redirect_to(:action => 'index')
+    else
+      render('new')
+       
+    end
+  end
+
+  def edit
+    @subject= Subject.find_by_id(params[:id])
+  end
+
+  def update 
+    @subject= Subject.find_by_id(params[:id])
+    if @subject.update_attributes(form_params)
+       flash[:notice] = "Suject updated sucessfully"
+       redirect_to(:action => 'show', :id => @subject.id)
+    else
+      render('edit')
+    end
+  end
+
+  def delete
+     @subject= Subject.find_by_id(params[:id])
+  end
+
+  def destroy 
+    @subject= Subject.find_by_id(params[:id])
+    if @subject.destroy()
+       flash[:notice] = "Suject deleted sucessfully"
+       redirect_to(:action => 'index')
+    else
+      render('delete')
+    end
+  end
+  
+  def cancel
+    redirect_to(:action => 'index')
+  end
+  
+  private 
+    def form_params
+      params.require(:subject).permit(:name, :position, :visible)
+    end
+
+end

@@ -1,0 +1,64 @@
+class PagesController < ApplicationController
+  layout "admin"
+  def index
+    @pages = Page.sorted
+  end
+
+  def show
+    @page = Page.find_by_id(params[:id])
+  end
+
+  def new
+    @page = Page.new()
+  end
+
+  def create
+    @page = Page.new(form_params)
+    if @page.save 
+      flash[:notice] = "Page created sucessfully"
+      redirect_to(:action => 'show', :id => @page.id)
+    else
+      render('new')
+    end
+  end
+
+  def edit
+    @page = Page.find_by_id(params[:id])
+  end
+
+  def update
+    @page = Page.find_by_id(params[:id])
+    if @page.update_attributes(form_params)
+       flash[:notice] = "Page updated sucessfully"
+       redirect_to(:action => 'index' )
+    else
+       render('edit')
+    end
+   
+  end
+
+  def delete
+    @page = Page.find_by_id(params[:id])
+  end
+
+  def destroy
+    @page = Page.find_by_id(params[:id])
+    if @page.destroy
+       flash[:notice] = "Page deleted sucessfully"
+       redirect_to(:action => 'index' )
+    else
+       render('edit')
+    end
+  end
+
+  def cancel
+    redirect_to(:action => 'index')
+  end
+
+  private 
+     def form_params
+       params.require(:page).permit(:subject_id,:name, :permalink, :position, :visible)
+     end
+  
+
+end

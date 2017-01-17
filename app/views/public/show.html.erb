@@ -1,0 +1,31 @@
+<% @page_title = "show contents" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-lg-2 navigation">
+      <nav class="navbar navbar-fixed-side">
+       <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects })%>
+      </nav>
+    </div>
+    <div class="col-sm-9 col-lg-10 contents">
+        <br/>
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+             <h3 id="decoration">  <%= @page.name %> </h3>
+          </div><!-- /.panel-heading -->
+            <div class="panel-body">
+              <% if @page.sections.count > 0 %>
+                  <% @page.sections.visible.sorted.each do |section|%>
+                      <% if section.content_type == 'html' %>
+                          <p><%= raw(sanitize(section.content, :tags => ['strong', 'p', 'em', 'a', 'div'])) %></p>
+                      <% elsif section.content_type == 'text' %>
+                          <p><%= section.content %></p>
+                      <% end %>
+                  <% end %>
+                <% else %> 
+                    <p> This Page does not have any sections</p>  
+               <% end %>
+             </div><!-- /.panel -->   
+       </div>
+    </div>
+</div>
+

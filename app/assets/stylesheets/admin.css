@@ -1,0 +1,15 @@
+#alert{ width:40%; margin-left:400px; text-align:center; border-radius:20px;}  
+span.status { display: block; width: 15px; height: 15px;margin: 0.70em auto ; padding: 0; border: 2px solid black; border-radius: 50px;}
+span.status.true{ background: green ; color: green }
+span.status.false{ background: red ; color: red } 
+.nav-color {background: #999bca }
+body { background: #fff}
+.text-white { color :black; font-weight: bold;  }
+.home { color :black; font-weight: bold; font-size: 20px; text-decoration: none; margin-left:280px; display: inline; }
+.logout { color :black; font-weight: bold; font-size: 20px; text-decoration: none; margin-left:10px; display: inline;}
+.username {color :white; font-weight: bold; font-size: 15px; display: inline; margin-left: 20px; padding: 8px; border-radius: 30px;border: 2px dotted black}
+.field_with_errors input { border: 2px solid red;  }
+.field_with_errors label { color: red}
+.home-and-logout { margin-top:15px;  } 
+#decoration { color :black; font-weight: bold; font-size: 20px; }
+

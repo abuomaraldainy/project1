@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+
+<body >
+    <h1 style="text-align:center;background-color:yellow"> This is hello page </h1>
+    <% 1.upto(5) do |i| %>
+       <%="#{i}" %>
+       <br/>
+    <% end %>
+
+    <br/>
+    <p> parameters from directly from the view </p>
+    <%="name is :#{params[:name]} and page is :#{params[:page]}"%>
+    <p> parameters coming from the controller </p>
+    <%="name is :#{@name} and page is :#{@page}"%>
+    <p> inspecting parameters </p>
+    <%=params.inspect%>
+</body>
+</html>

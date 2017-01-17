@@ -1,0 +1,22 @@
+<% @page_title = "Delete Section" %>
+<% @panel_header = "Delete Section" %>
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index', :page_id => @page.id}, :class => "") %> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4"> </div>
+    <div class="col-lg-4">
+		<%= form_for(:section, :url => {:action => 'destroy', :id => @section.id, :page_id => @page.id}) do |f| %>
+		    <div class="alert alert-danger">
+		        <p class="text-center"> Are you sure you want to delete <br/> <%=">> #{@section.name} << " %>?</p>
+		    </div>
+		    <div class="col-sm-offset-0"> 
+		    	<%= submit_tag('Delete Section',:class => 'btn btn-danger')%> 
+		 	</div>
+		<% end %>    
+    </div>
+    <div class="col-lg-4"> </div>
+</div> 
+

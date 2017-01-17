@@ -1,0 +1,23 @@
+<% @page_title = "Update Subject" %>
+<% @panel_header = "Update Subject" %>
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index'}, :class => "") %> 
+    </div>
+</div>
+<div class="row">
+   <%= error_message_for(@subject) %>
+   <div class="col-lg-4"></div>
+   <div class="col-lg-4">
+      <%= form_for(:subject, :url => {:action => 'update', :id => @subject.id}) do |f| %>
+         <%= render(:partial => "form", :locals => {:f => f}) %>
+         <div class="col-sm-offset-0"> 
+            <%= submit_tag('Update Subject',:class => 'btn btn-primary')%> 
+         </div>
+      <% end %> 
+   </div>
+   <div class="col-lg-4"> 
+   </div>
+</div>
+<br/>
+   

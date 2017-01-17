@@ -1,0 +1,5 @@
+#decoration { color :black; font-weight: bold; font-size: 20px; }
+body {background-color:#999bca}
+.navigation { background-color:#999bca;}
+.contents { background-color:white;height: 640px;}
+.main {color :white; font-weight: bold; font-size: 20px; text-decoration: none; margin-left:280px; display: inline; }

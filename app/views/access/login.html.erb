@@ -1,0 +1,23 @@
+<% @page_title ="Admin login" %>
+<% @panel_header ="Login " %>
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <%= form_tag(:action => 'attempt_login') do %>
+		<table class="table">
+		   <tr>
+		      <td ><b><%= label_tag(:username) %> :</b></td><td><%= text_field_tag(:username, ) %></td>
+		   </tr>
+		   <tr>
+		     <td ><b><%= label_tag(:password) %> :</b></td><td><%= password_field_tag(:password) %></td>
+		   </tr>
+		   <tr>
+		   <tr>
+		     <td></td><td><%= submit_tag("Sign in ", :class => "btn btn-success") %></td>
+		   </tr>
+		</table>
+		<% end %>
+    </div>
+    <div class="col-lg-4"> </div>
+</div>
+

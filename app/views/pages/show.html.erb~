@@ -1,0 +1,29 @@
+<p><%= link_to("Back To Page's List", {:action => 'index'}) %> </p>
+<h2> Page's Details </h2>
+<table class="index_t">
+   <tr>
+      <td ><b>Subject Id : </b><%= @page.subject_id %></td>
+   </tr>
+   <tr>
+      <td ><b>Name : </b><%= @page.name %></td>
+   </tr>
+   <tr>
+      <td ><b>Permalink : </b><%= @page.permalink %></td>
+   </tr>
+   <tr>
+      <td ><b>Position : </b><%= @page.position %></td>
+   </tr>
+   <tr>
+      <td><b>Visibility : </b><%=  @page.visible ? 'true' : 'false' %></td>
+   </tr>
+   <tr>
+      <td ><b>Number Of Sections : </b><%= @page.sections.size %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Created : </b><%=  @page.created_at %></td>
+   </tr>
+   <tr>
+      <td><b>Time Subject Updated :</b><%=  @page.updated_at %></td> 
+   </tr>
+</table>
+

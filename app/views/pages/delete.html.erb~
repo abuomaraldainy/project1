@@ -1,0 +1,16 @@
+<h2> Delete a Page </h2>
+<%= form_for(:page, :url => {:action => 'destroy', :id => @page.id}) do |f| %>
+<table class="index_t">
+  <tr>
+     <td > Are you sure you want to delete <b></b></td><td><%=">> #{@page.name} << " %>?</td>
+  </tr>
+  <tr>
+     <td><%= submit_tag('Delete Page')%></td>
+<% end %> 
+<%= form_for(:page, :url => {:action => 'cancel'}) do |f| %>
+    <td>
+       <%= submit_tag('Cancel')%>
+     </td>
+  </tr>
+</table> 
+<% end %>

@@ -1,0 +1,13 @@
+<% @page_title = "Delete Section" %>
+<% @panel_header = "Delete Section" %>
+<%= form_for(:section, :url => {:action => 'destroy', :id => @section.id}) do |f| %>
+    <div class="alert alert-danger">
+        <p class="text-center"> Are you sure you want to delete <%=">> #{@section.name} << " %>?</p>
+    </div>
+    <div class="col-sm-offset-0"> 
+    	<%= submit_tag('Delete Section',:class => 'btn btn-success')%> 
+ 	</div>
+<% end %>    
+<br/>     
+<%= link_to("Back To The List", {:action => 'index'}, :class => "btn btn-default") %>
+

@@ -1,0 +1,65 @@
+<% text = "Ruby is a scripting language designed by Yukihiro Matsumoto, also known as\n
+Matz. It runs on a variety of platforms, such as Windows, Mac OS, and the
+various versions of UNIX.\n\n
+This tutorial gives a complete understanding on Ruby"%>
+
+<h1> Word wrap </h1>
+<%= word_wrap(text, :line_width => 40) %>
+
+<hr/>
+
+<h1> simple format </h1>
+<%= simple_format(text) %>
+ 
+<hr/>
+
+<h1> Word wrap + simple format </h1>
+<%= simple_format(word_wrap(text, :line_width => 40)) %>
+
+<hr>
+
+<h1> truncate </h1>
+<%= truncate(text, :length => 20, :omission => ".......") %>
+
+<hr/>
+
+<h1> Excerpt </h1>
+<%= excerpt(text, 'language', :radius => 0, :omission => "...") %>
+
+<hr/>
+
+<h1> highlight text </h1>
+<%= highlight(text, ['language', 'ruby', 'as'] ) %>
+
+<hr/>
+
+<h1> highlight + bold </h1>
+<%= highlight(text, ['language', 'ruby', 'as'], :highlighter => '<font style="background-color:red; color:yellow"><b>\1</b></font>') %>
+
+<hr/>
+
+<h1> Pluralize</h1>
+<%= "mouse".pluralize %>
+
+<hr/>
+
+<h1> pluralize + numbers </h1>
+<% [*1..10].each do |n| %>
+   <%= pluralize(n, 'product') %>
+   <%= pluralize(n, 'foot', 'feet') %>
+   <br/>
+<% end %> 
+
+<hr/>
+
+<h1> cycling </h1>
+<% 1.upto(4) do  %>
+  <%= cycle('Ruby', 'Python', 'Java') %> 
+<% end %> 
+
+
+
+
+
+
+

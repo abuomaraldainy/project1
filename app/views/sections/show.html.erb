@@ -1,0 +1,43 @@
+<% @page_title = "View Section" %>
+<% @panel_header = "Section's Details" %>
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index', :page_id => @page.id}, :class => "") %> 
+    </div>
+</div>
+<div class="row">
+   <div class="col-lg-4"> </div>
+   <div class="col-lg-4">
+      <table class="table table-striped">
+         
+         <tr>
+            <td ><b>Page : </b><%= @section.page.name %></td>
+         </tr>
+          <tr>
+            <td ><b>Name : </b><%= @section.name %></td>
+         </tr>
+         <tr>
+            <td ><b>Position : </b><%= @section.position %></td>
+         </tr>
+         <tr>
+            <td ><b>Content Type : </b><%= @section.content_type %></td>
+         </tr>
+         <tr>
+            <td ><b>content : </b><%= @section.content %></td>
+         </tr>
+         <tr>
+            <td><b>Visibility : </b><%=  @section.visible ? 'true' : 'false' %></td>
+         </tr>
+         <tr>
+            <td><b>Time Subject Created : </b><%=  @section.created_at %></td>
+         </tr>
+         <tr>
+            <td><b>Time Subject Updated :</b><%=  @section.updated_at %></td> 
+         </tr>
+   </table>
+   </div>
+   <div class="col-lg-4"> 
+   </div>
+</div>         
+
+

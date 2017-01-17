@@ -1,0 +1,28 @@
+<% if !flash[:notice].blank? %>
+   <%= flash[:notice]%>
+<% end %>
+<h2>List of all subjects </h2>
+<table class="index_t">
+   <tr>
+       <th>ID </th>
+       <th>Subject </th>
+       <th>Position</th>
+       <th>Visibility</th>
+       <th>Number Of Pages </th>
+       <th>Action</th>
+   </tr>
+   <% @subjects.each do |subject|%>
+   <tr> 
+       <td ><%= subject.id %></td>
+       <td ><%= subject.name %></td>
+       <td ><%= subject.position %></td>
+       <td ><%= subject.visible ? 'yes' : 'no' %></td>
+       <td ><%= subject.pages.size %></td>
+       <td> <%= link_to('Show',{:action => 'show' , :id => subject.id}) %> </td>
+       <td> <%= link_to('Edit',{:action => 'edit' , :id => subject.id}) %> </td>
+       <td> <%= link_to('Delete',{:action => 'delete' , :id => subject.id}) %> </td>
+   </tr>
+   <% end %>
+</table>
+<p><%= link_to("Create a new Subject", {:action => 'new'}) %> </p>
+ 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    
+    <%= stylesheet_link_tag('application', :media => 'all') %>
+
+   
+    
+
+   
+</head>
+
+<body >
+<p> jshjfhdjfhdjhfjdhfdjf </p> 
+   <%= yield %>
+
+</body>
+
+</html>

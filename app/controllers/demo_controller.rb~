@@ -1,0 +1,18 @@
+class DemoController < ApplicationController
+  layout false
+  def index
+  end
+  def hello
+     @name = params['name']
+     @page = params['page']
+  end
+  def other_hello
+     render(:controller=>'demo',:action=>'hello')
+  end
+
+  def text_helpers
+  end
+
+  def number_helpers
+  end
+end

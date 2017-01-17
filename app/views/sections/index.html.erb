@@ -1,0 +1,56 @@
+<% @page_title = "Sections" %>
+<% @panel_header = "List of all Sections" %>  
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To Pages", {:controller => "pages", :action => 'index', 
+        :subject_id => @page.subject_id}) %> 
+    </div>
+</div>
+</br/>
+<div class="row"> 
+    <div class="col-lg-4">
+      <p id="decoration"> <%= pluralize(@sections.count, 'Section') %> Found</p>
+    </div>
+</div>
+<% if !@sections.blank? %>
+  <table class="table table-striped table-bordered">
+     <tr class="info">
+         <th></th>
+         <th>Section </th>
+         <th>Content Type </th>
+         <th>Content </th>
+         <th>Visibility</th>
+         <th class="text-center">Action</th>
+     </tr>
+     <% @sections.each do |section|%>
+     <tr class="<%= cycle('default', 'danger')%>">
+         <td ><%= section.position %></td>
+         <td ><%= section.name %></td>
+         <td ><%= section.content_type %></td>
+         <td ><%= section.content %></td>
+         <td ><%=status_tag(section.visible) %></td>
+         <td class="text-center">
+          <%= link_to('Show',{:action => 'show' , :id => section.id, 
+            :page_id => @page.id}, :class => 'btn btn-success btn-sm') %> 
+          <%= link_to(image_tag('edit.png', :size => '18x18')+'Edit',{:action => 'edit' , :id => section.id, 
+            :page_id => @page.id}, :class => 'btn btn-primary btn-sm') %> 
+          <%= link_to('Delete',{:action => 'delete' , :id => section.id, 
+            :page_id => @page.id}, :class => 'btn btn-danger btn-sm') %> 
+          <%= link_to(image_tag('add.png', :size => '20x20')+' New Section', {:action => 'new', 
+            :page_id => @page.id}, :class => "btn btn-default") %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="row"> 
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        <p class="alert alert-warning"> You do not have any sections added to this page<br/>Click New section button to create one  </p>
+        <%= link_to("New Section", {:action => 'new', :page_id => @page.id}, :class => "btn btn-default") %>
+      </div>
+      <div class="col-lg-4"></div>
+  </div>
+<% end %>
+
+

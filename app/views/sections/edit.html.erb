@@ -1,0 +1,22 @@
+<% @page_title = "Update Section" %>
+<% @panel_header = "Update Section" %> 
+<div class="row"> 
+    <div class="col-lg-12">
+      <%= link_to("<<< Go To List", {:action => 'index', :page_id => @page.id}, :class => "") %> 
+    </div>
+</div>
+<div class="row">
+   <%= error_message_for(@section) %>
+   <div class="col-lg-3"> </div>
+   <div class="col-lg-6">
+      <%= form_for(:section, :url => {:action => 'update', :id => @section.id , :page_id => @page.id}) do |f| %>
+         <%= render(:partial => "form", :locals => {:f => f}) %>
+         <div class="col-sm-offset-3"> 
+            <%= submit_tag('Update Section',:class => 'btn btn-primary')%> 
+         </div>
+      <% end %> 
+   </div>
+   <div class="col-lg-4"> 
+   </div>
+</div>
+ 

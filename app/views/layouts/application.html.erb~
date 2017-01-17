@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>Simple Cms</title>
+  <%= stylesheet_link_tag('application', :media => 'all') %>
+ </head>
+ <body>
+ <% if !flash[:notice].blank? %>
+   <%= flash[:notice]%>
+<% end %>
+  <p> kdskjkdfjgkdfjgkdjf </P>
+
+   <%= yield %>
+
+ </body>
+</html>

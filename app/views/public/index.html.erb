@@ -1,0 +1,15 @@
+<% @page_title = "main page" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-lg-2 navigation">
+      <nav class="navbar navbar-fixed-side">
+       <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects })%>
+      </nav>
+    </div>
+    <div class="col-sm-9 col-lg-10 contents">
+        <br/>
+        <h3 id="decoration" class="text-center">  Welcome to SMS SIMPLE application </h3>  
+    </div>
+</div>
+
+

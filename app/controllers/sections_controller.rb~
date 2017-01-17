@@ -1,0 +1,64 @@
+class SectionsController < ApplicationController
+  
+ #layout false
+  def index
+    @sections = Section.sorted
+  end
+
+  def show
+    @section= Section.find_by_id(params[:id])
+  end
+
+  def new
+    @section= Section.new()
+  end
+  
+  def create 
+    @section = Section.new(form_params)
+    if @section.save 
+       flash[:notice] = "Section created sucessfully"
+       redirect_to(:action => 'index')
+    else
+      render('new')
+       
+    end
+  end
+
+  def edit
+    @section= Section.find_by_id(params[:id])
+  end
+
+  def update 
+    @section= Section.find_by_id(params[:id])
+    if @section.update_attributes(form_params)
+       flash[:notice] = "Section updated sucessfully"
+       redirect_to(:action => 'show', :id => @section.id)
+    else
+      render('edit')
+    end
+  end
+
+  def delete
+     @section= Section.find_by_id(params[:id])
+  end
+
+  def destroy 
+    @section= Section.find_by_id(params[:id])
+    if @section.destroy()
+       flash[:notice] = "Section deleted sucessfully"
+       redirect_to(:action => 'index')
+    else
+      render('delete')
+    end
+  end
+  
+  def cancel
+    redirect_to(:action => 'index')
+  end
+  
+  private 
+    def form_params
+      params.require(:section).permit(:page_id, :name, :position, :visible, :content_type, :content)
+    end
+
+end
